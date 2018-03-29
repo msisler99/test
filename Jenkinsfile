@@ -7,8 +7,22 @@ pipeline {
       }
     }
     stage('Test') {
-      steps {
-        sh 'ping -c 3 localhost'
+      parallel {
+        stage('Test_1') {
+          steps {
+            sh 'ping -c 3 localhost'
+          }
+        }
+        stage('Test_2') {
+          steps {
+            sh 'ping -c 5 localhost'
+          }
+        }
+        stage('Test_3') {
+          steps {
+            sh 'ping -c 3 localhost'
+          }
+        }
       }
     }
     stage('Deploy') {
