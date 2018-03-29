@@ -6,7 +6,7 @@ pipeline {
         sh 'ping -c 2 localhost'
       }
     }
-    stage('Test') {
+    stage('ParallelTest') {
       parallel {
         stage('Test_1') {
           steps {
