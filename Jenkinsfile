@@ -20,6 +20,11 @@ pipeline {
         }
         stage('Test_3') {
           steps {
+            sh 'sdsfdsfdsdfdsf'
+          }
+        }
+        stage('Test_4') {
+          steps {
             sh 'ping -c 3 localhost'
           }
         }
